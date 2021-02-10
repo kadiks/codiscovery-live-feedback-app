@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const { PORT, DB_URL } = process.env;
 
@@ -42,6 +43,7 @@ const FeedbackModel = mongoose.model("Feedback", feedbackSchema);
 // Server setup
 const app = express();
 
+app.use(cors());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
@@ -97,15 +99,3 @@ app.get("/feedbacks", receiveFeedback); // Same URL => Different URI
 app.listen(PORT, () => {
   console.log(`Server started on port: ${PORT}`);
 });
-
-/**
- *
- * [{
- *      name: "Jason",
- *      age: 28
- * }, {
- *      name "Jénaïc",
- *      age: 18
- * }]
- *
- */
