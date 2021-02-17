@@ -68,7 +68,7 @@ app.use(express.static("public"));
 
 const addNewFeedback = async (req, res) => {
   // catch route
-  console.log("req.body", req.body); // get data from client
+  // console.log("req.body", req.body); // get data from client
   const entry = new FeedbackModel(req.body); // turn client data to model
   try {
     const savedEntry = await entry.save(); // get back DB entry = send model data to DB
