@@ -1,0 +1,10 @@
+.Day-container {
+  border: 1px black solid;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+}
+
+.Day-day {
+  text-transform: uppercase;
+}

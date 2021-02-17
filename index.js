@@ -57,11 +57,14 @@ app.use(bodyParser.json());
 
 // app[VERB](route<String>, callback(request, response)<Function>)
 
-app.get("/", (req, res) => {
-  res.json({
-    name: "Welcome to Codiscovery Feedback API",
-  });
-});
+// app.get("/", (req, res) => {
+//   res.json({
+//     name: "Welcome to Codiscovery Feedback API",
+//   });
+// });
+
+// app.use('/', express.static("public"));
+app.use(express.static("public"));
 
 const addNewFeedback = async (req, res) => {
   // catch route
@@ -83,7 +86,7 @@ const addNewFeedback = async (req, res) => {
   }
 };
 
-app.post("/feedbacks", addNewFeedback); // Same URL => Different URI
+app.post("/api/feedbacks", addNewFeedback); // Same URL => Different URI
 
 const receiveFeedback = async (req, res) => {
   const feedbacks = await FeedbackModel.find();
@@ -94,7 +97,7 @@ const receiveFeedback = async (req, res) => {
   });
 };
 
-app.get("/feedbacks", receiveFeedback); // Same URL => Different URI
+app.get("/api/feedbacks", receiveFeedback); // Same URL => Different URI
 
 app.listen(PORT, () => {
   console.log(`Server started on port: ${PORT}`);

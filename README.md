@@ -17,3 +17,7 @@ Feedback app for Codiscovery
 
 - `npm i`
 - `npm start`
+
+## TODO
+
+- [ ] Add "link" attr in Feedback model
