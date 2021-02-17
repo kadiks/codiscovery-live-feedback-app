@@ -79,7 +79,7 @@ const Form = ({ onSubmitSuccess }) => {
             {types.map(({ value, htmlText }) => {
               const isSelected = value === type ? true : false;
               return (
-                <option value={value} selected={isSelected}>
+                <option key={value} value={value}>
                   {htmlText}
                 </option>
               );

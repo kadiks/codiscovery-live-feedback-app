@@ -2,3 +2,13 @@
   text-align: center;
   color: indianred;
 }
+.App-flink {
+  cursor: pointer;
+  color: gray;
+  text-decoration: underline;
+  text-align: right;
+  padding-right: 1em;
+}
+.App-flink:hover {
+  text-decoration: none;
+}
