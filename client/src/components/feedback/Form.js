@@ -63,9 +63,9 @@ const Form = ({ onSubmitSuccess }) => {
   return (
     <div>
       <h4>Formulaire</h4>
-      <form onSubmit={onSubmitForm}>
-        <div className="Form-group">
-          <label htmlFor="form-title">Titre</label>
+      <form className="row" onSubmit={onSubmitForm}>
+        <div className="Form-group input-field col s12">
+          <label htmlFor="form-title">Titre de votre suggestion</label>
           <input
             id="form-title"
             onChange={onChangeTitle}
@@ -74,8 +74,8 @@ const Form = ({ onSubmitSuccess }) => {
             value={title}
           />
         </div>
-        <div>
-          <select onChange={onChangeType}>
+        <div className="input-field col s12">
+          <select className="browser-default" onChange={onChangeType}>
             {types.map(({ value, htmlText }) => {
               const isSelected = value === type ? true : false;
               return (
@@ -89,12 +89,26 @@ const Form = ({ onSubmitSuccess }) => {
             <option value="tutorial">Tutoriel</option>
             <option value="article">Article de blog</option> */}
           </select>
-          <div>
-            <textarea onChange={onChangeDescription} value={description} />
-          </div>
-          <div>
-            <button type="submit">Submit</button>
-          </div>
+        </div>
+        <div className="input-field col s12">
+          <label for="description">Description de votre suggestion</label>
+          <textarea
+            id="description"
+            className="materialize-textarea"
+            onChange={onChangeDescription}
+            value={description}
+          />
+        </div>
+
+        <div>
+          <button
+            className="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+          >
+            Submit
+            <i className="material-icons right">send</i>
+          </button>
         </div>
       </form>
     </div>
